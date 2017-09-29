@@ -1,0 +1,41 @@
+
+body {
+    background-color: #E6E8E6;
+    }
+
+.main-title {
+    color: #E4572E;
+    text-align: center;
+    }
+
+h2 {
+    color: #A8C686;
+    text-decoration: underline;
+    }
+
+p {
+    font-family: verdana, sans-serif;
+    font-size: 20px;
+    }
+
+#footer {
+    color: #E4572E;
+    font-family: verdana, sans-serif;
+    font-size: 3em;
+    background-image: url("http://smartbitchestrashybooks.com/WP/wp-content/uploads/2015/06/Depositphotos_18610179_s-e1434591967648.jpg");
+    background-size: 50px 50px;
+    background-position: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
