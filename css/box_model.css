@@ -3,37 +3,38 @@
     border: 1px solid #000000;
     width: 150px;
     height: 50px;
+    padding: 10px;
     margin-bottom: 10px;
     font-weight: bold;
     color: #ffffff;
 }
 
-#redbox {
+.red {
     margin-left: 0;
     background-color: #ff0000;
 }
 
-#orangebox {
+.orange {
     margin-left: 30px;
     background-color: #ffa500;
 }
 
-#yellowbox {
+.yellow {
     margin-left: 60px;
     background-color: #ffff00;
 }
 
-#greenbox {
+.green {
     margin-left: 90px;
     background-color: #00ff00;
 }
 
-#bluebox {
+.blue {
     margin-left: 120px;
     background-color: #0000ff;
 }
 
-#purplebox {
+.purple{
     margin-left: 150px;
     background-color: #ee82ee;
 }
