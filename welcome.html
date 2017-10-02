@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" a href="css/welcomehtml.css">
     <div id="Core_Values" class="tabcontent">
         <h3>Core Values</h3>
         <p><ul>
@@ -32,13 +33,34 @@
 
     <div id="Our_Product" class="tabcontent">
         <h3>Our Product</h3>
-        <p>Oslo is the capital of Norway.</p>
+        <p><table>
+            <tr>
+                <th>Plan</th>
+                <th>Price</th>
+                <th>Features</th>
+            </tr>
+            <tr>
+                <td>Starter</td>
+                <td>$99</td>
+                <td>Base Technology</td>
+            </tr>
+            <tr>
+                <td>Advanced</td>
+                <td>$199</td>
+                <td>Additional Features</td>
+            </tr>
+            <tr>
+                <td>Premium</td>
+                <td>$499</td>
+                <td>Unlimited Support</td>
+            </tr>
+            </table></p>
     </div>
 
-    <button class="tablink" onclick="openCity('Core_Values', this, 'red')" id="defaultOpen">Core Values</button>
-    <button class="tablink" onclick="openCity('Our_Process', this, 'green')">Our Process</button>
-    <button class="tablink" onclick="openCity('2020_Vision', this, 'blue')">2020 Vision</button>
-    <button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+    <button class="tablink" onclick="menubutton('Core_Values', this, 'red')" id="defaultOpen">Core Values</button>
+    <button class="tablink" onclick="menubutton('Our_Process', this, 'green')">Our Process</button>
+    <button class="tablink" onclick="menubutton('2020_Vision', this, 'blue')">2020 Vision</button>
+    <button class="tablink" onclick="menubutton('Our Product', this, 'orange')">Our Product</button>
 
 
 
@@ -54,8 +76,7 @@
         <h1>Welcome to Veridian Dynamics!</h1>
         <div class="summary" id="tagline" role="article"></div> At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><i>technology.</i></strong></div>
     </header>
-    <hr>
-    <div>
+    <!-- <div>
         <h2>Core Values</h2>
         <ul>
             <li>Competence</li>
@@ -78,7 +99,7 @@
             <li>Increase Success by 20%</li>
             <li>Increase Business by 30%</li>
         </ul>
-    </div>
+    </div> -->
 
     <hr>
     <div value="wrapper">
@@ -87,15 +108,15 @@
                 <th><h2>Company Vision</h2></th>
             </tr>
             <tr>
-                <td><img src="./img/veridian_team.jpg" alt="" width="720px"></td>
-                <td><img src="./img/veridian_friendships.jpg" alt=""></td>
+                <td><img class="photoshake" src="./img/veridian_team.jpg" alt="" width="720px"></td>
+                <td><img class="photoshake" src="./img/veridian_friendships.jpg" alt=""></td>
             </tr>
             <tr>
-                <td><img src="./img/veridian_mistakes.jpg" alt=""></td>
-                <td><img src="./img/veridian_rightthing.jpg" alt=""></td>
+                <td><img class="photoshake" src="./img/veridian_mistakes.jpg" alt=""></td>
+                <td><img class="photoshake" src="./img/veridian_rightthing.jpg" alt=""></td>
             </tr>
         </table>
-    </div>
+    <!-- </div>
     <div>
         <h2>Our Product</h2>
        <table>
@@ -120,7 +141,7 @@
                <td>Unlimited Support</td>
            </tr>
        </table>
-        </div>
+        </div> -->
 
     <footer>
 

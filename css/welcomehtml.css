@@ -3,8 +3,7 @@ body {
     margin: 0 auto;
     max-width: 50em;
     font-family: "helvetica", "arial", sans-serif;
-    b
-    background-color: #E6E8E6;
+    background-image: url("mooning/mooning.png");
     line-height:1.5;
     padding: 4em 1 em;
     }
@@ -64,7 +63,7 @@ a:hover {
     text-align: right;
     }
 
-img:hover {
+.photoshake:hover {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s;
     /* When the animation is finished, start again */
