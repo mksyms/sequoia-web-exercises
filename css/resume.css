@@ -1,16 +1,30 @@
 body {
+    margin: 50px auto;
+    width: 500px;
+    padding: 10px;
+    color: darkslategrey;
+    font-family: "helvetica", "arial", sans-serif;
+}
+
+.container {
+    margin: 100px auto;
+    width: 800px;
+    padding: 10px;
+    color: black;
+    text-align: right;
+    @font-face:
+    font-size: 3em;
+    font-weight: bolder;
+}
+
+span.company {
+    text-weight:bold;
+    text-decoration: underline
+
 
 }
 
-header {
-
-}
-
-h1{
-
-}
-
-ul{
+ul {
 
 }
 
