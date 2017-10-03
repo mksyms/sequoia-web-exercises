@@ -4,10 +4,20 @@
     body {
         width: 365px;
         height: 1192px;
+        font-family: "helvetica", "arial", sans-serif;
+
+
     }
     .alert-info {
+        height: 38px;
+        width: 252px;
         border: 1px solid black;
         background-color: #D6FEFE;
+        padding: 5px;
+        font-size: 5px;
+        font-decoration: block;
+    }
+    h1 {
     }
 }
 
