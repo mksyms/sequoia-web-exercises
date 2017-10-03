@@ -1,0 +1,33 @@
+
+/* smaller mobile device as wide as 768px */
+@media screen and (max-width:768px) {
+    body {
+        width: 365px;
+        height: 1192px;
+    }
+    .alert-info {
+        border: 1px solid black;
+        background-color: #D6FEFE;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media screen and (min-width:768px) {
+    /* ANY css style definitions here will apply when the screen is > 768 and < 992*/
+
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width:992px) {
+    .hidden-on-mobile {
+        display: none;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width:1200px) {
+    .hidden-on-mobile {
+        display: none;
+    }
+}
