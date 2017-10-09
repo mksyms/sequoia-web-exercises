@@ -1,0 +1,55 @@
+body {
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 80%;
+    min-height: 100vh;
+}
+
+.row {
+    width:100%;
+
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.one-third,
+.one-half,
+.one-fourth,
+.one-eighth,
+.two-thirds {
+    width: 100%;
+    float: left;
+}
+
+@media screen and (min-width: 768px) {
+
+    .one-third {
+        width: 33.3333%;
+    }
+
+    .one-half {
+        width: 50%;
+    }
+
+    .one-fourth {
+        width: 25%;
+    }
+
+    .one-eighth {
+        width: 12.5%;
+    }
+}
