@@ -1,0 +1,15 @@
+.bgSizeCover {
+    background-image: url(http://java.codeup.com/examples/bootstrap/pizza.png);
+    background-size: cover;
+    color: lightgrey;
+    resize: both;
+    overflow: scroll;
+}
+    /*background-image: url(http://88nn.info/uploads/fotos/52/img_552234.jpg);*/
+    /*background-size: contain;*/
+    /*background-repeat: repeat-x;*/
+    /*color: lightgrey;*/
+    /*resize: both;*/
+    /*overflow: scroll;
+    }*/
+
