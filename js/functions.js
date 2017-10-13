@@ -151,16 +151,3 @@ alert("The amount to tip is: " + calculateTip(tipPercentage, totalBill));
 
 
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
