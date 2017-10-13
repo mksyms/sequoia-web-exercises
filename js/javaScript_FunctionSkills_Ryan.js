@@ -48,14 +48,19 @@ console.log(second("I thought I needed to run and find somebody to love"));*/
 
 //Write a function called `rest(input)` that returns everything but the first character of a string.
 
-function rest(input) {
-    var firstCharacterOfString = input.charAt(0)
-    var
-    return firstCharacterOfString;
-}
-
-console.log(rest("Don\'t worry \'bout the small things"));
-
+// function rest(input) {
+//     return input.replace(input.charAt(0), '');
+// }
+//
+// console.log(rest("Don\'t worry \'bout the small things"));
+//
+//
+// function rest(input) {
+//     var restOfString = input.substr(1); // chop's off first character and saves the rest in restOfString
+//     return restOfString;
+// }
+//
+// console.log(rest("Don\'t worry \'bout the small things"));
 
 //Write a function called `reverse(input)` that takes a string and returns it reversed.
 
