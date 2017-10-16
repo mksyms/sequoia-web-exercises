@@ -52,24 +52,30 @@
 
 /*
 function analyzeColor(input) {
+    var message = "";
+
+    input = input.toLocaleLowerCase();
+
     if (input === "blue") {
-        alert("blue is the color of the sky");
+        message = "blue is the color of the sky";
 
-    } else if (analyzeColor === "red") {
-        alert("Strawberries are red");
+    } else if (input === "red") {
+        message = "Strawberries are red";
 
-    } else if (analyzeColor === "cyan") {
-        alert("blue is the color of the sky");
+    } else if (input === "blue") {
+        message = "blue is the color of the sky";
 
     } else {
-        alert("Your entry of " + input + " is not an approved color");
+        message ="Your entry of " + input + " is not an approved color";
     }
+
+    return message;
 }
 
 var userColorInput = prompt("Please enter a color");
 analyzeColor(userColorInput);
-
 */
+
 
 
 // Don't change the next two lines!
@@ -86,8 +92,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message everytime you refresh the page
  */
 
-/*
-function analyzeColor(randomColor) {
+/*function analyzeColor(randomColor) {
     var message;
 
     if (randomColor === "red") {
@@ -117,11 +122,12 @@ function analyzeColor(randomColor) {
         message = "SHUT UP";
     }
 
-    console.log(message);
+    return message;
 }
 
 
-analyzeColor(randomColor);*/
+console.log(randomColor);
+console.log(analyzeColor(randomColor));*/
 
 // //if you use return off of every case...
 // console.log(analyzeColor(randomColor));
@@ -134,10 +140,10 @@ analyzeColor(randomColor);*/
  * Refactor your above function to use a switch-case statement
  */
 
-function analyzeColor(randomColor) {
+/*function analyzeColor(input) {
     var message;
 
-    switch (randomColor) {
+    switch (input) {
 
         case "red":
             message = "Strawberries are red";
@@ -168,16 +174,15 @@ function analyzeColor(randomColor) {
             break;
 
         default:
-            message = "SHUT UP"
-            break;
+            message = "SHUT UP";
     }
 
-    console.log(message);
+    return message;
 }
 
 
-analyzeColor(randomColor);
-
+console.log(analyzeColor(randomColor));
+console.log(randomColor);*/
 
 /**
  * TODO:
@@ -187,6 +192,12 @@ analyzeColor(randomColor);
  */
 
 /* ########################################################################## */
+
+
+/*var userChoice = prompt("Please pick a color!");
+
+alert(analyzeColor(userChoice));*/
+
 
 /**
  * TODO:
@@ -198,6 +209,8 @@ analyzeColor(randomColor);
  *
  * Write a function named `caculateTotal` that accepts a lucky number and total
  * amount, and returns the discounted price.
+ // ^^^ INSTRUCTIONS GIVE US FUNCTION NAME, TELLS US PARAMETERS OF FUNCTION AND
+ // WHAT THE FUNCTION DOES!
  *
  * Example:
  * calculateTotal(0, 100) // returns 100
@@ -208,6 +221,112 @@ analyzeColor(randomColor);
  * return value.
  */
 
+// Write a function named `caculateTotal` that accepts a lucky number and total
+// amount, and returns the discounted price.
+    // ^^^ INSTRUCTIONS GIVE US FUNCTION NAME, TELLS US PARAMETERS OF FUNCTION AND
+    // WHAT THE FUNCTION DOES!
+
+//going to use switch case because discounted price will be different for each different lucky number
+
+
+/*function calculateTotal(luckyNumber, total) {
+
+    var discountPercentage, newDiscountedPrice;
+    // have to declare your variables otherwise theyre red, combine variables in one line w/ a comma inberween
+
+
+    switch (luckyNumber){
+        case 0:
+            discountPercentage = 0;
+            break;
+
+        case 1:
+            discountPercentage = .1;
+            break;
+
+        case 2:
+            discountPercentage = .25;
+            break;
+
+        case 3:
+            discountPercentage = .35;
+            break;
+
+        case 4:
+            discountPercentage = .5;
+            break;
+
+        case 5:
+            discountPercentage = 1;
+            break;
+
+        default:
+    }
+
+    newDiscountedPrice = total - (total * discountPercentage);
+
+    return newDiscountedPrice;
+
+
+}
+
+console.log(calculateTotal(4, 100));*/
+
+
+///CONSOLIDATE FUNCTIONS FOR SWITCH CASE
+
+
+function calculateTotal(luckyNumber, total) {
+
+    var discountPercentage;
+    var newDiscountedPrice;
+
+    discountPercentage = calculatePercentage(luckyNumber);
+
+    newDiscountedPrice = total - (total * discountPercentage);
+
+    return newDiscountedPrice;
+
+
+    function calculatePercentage(num) {
+        switch (num) {
+            case 0:
+                discountPercentage = 0;
+                break;
+
+            case 1:
+                discountPercentage = .1;
+                break;
+
+            case 2:
+                discountPercentage = .25;
+                break;
+
+            case 3:
+                discountPercentage = .35;
+                break;
+
+            case 4:
+                discountPercentage = .5;
+                break;
+
+            case 5:
+                discountPercentage = 1;
+                break;
+
+            default:
+        }
+
+    return newDiscountedPrice;
+
+
+}
+
+console.log(calculateTotal(4, 100));
+
+
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 6.
@@ -215,5 +334,11 @@ analyzeColor(randomColor);
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+Generate a random number between 0 and 6
+var luckyNumber = Math.floor(Math.random() * 6);
+var totalBill = prompt("Please enter your total bill.");
+
+
+alert("Your lucky number is " + luckyNumber);
+alert("Your total bill before the discount is: " + totalBill);
+alert("Price after discount applied is: " + calculateTotal(luckyNumber, totalBill));
