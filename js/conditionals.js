@@ -16,6 +16,19 @@
  * Can you refactor your code to use functions?
  */
 
+// var userConfirmsNumberEntry = confirm("Would you like to enter a number?");
+//
+// if (userConfirmsNumberEntry)  {
+//     var confirmed = prompt("Please enter your number?");
+// }
+// console.log
+//
+//
+
+
+
+
+
 /* ########################################################################## */
 
 /**
@@ -36,11 +49,35 @@
  * console.logging the function's return value
  */
 
+
+/*
+function analyzeColor(input) {
+    if (input === "blue") {
+        alert("blue is the color of the sky");
+
+    } else if (analyzeColor === "red") {
+        alert("Strawberries are red");
+
+    } else if (analyzeColor === "cyan") {
+        alert("blue is the color of the sky");
+
+    } else {
+        alert("Your entry of " + input + " is not an approved color");
+    }
+}
+
+var userColorInput = prompt("Please enter a color");
+analyzeColor(userColorInput);
+
+*/
+
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color everytime the page loads)
+
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
@@ -49,10 +86,98 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message everytime you refresh the page
  */
 
+/*
+function analyzeColor(randomColor) {
+    var message;
+
+    if (randomColor === "red") {
+        message = "Strawberries are red";
+
+    } else if (randomColor === "orange") {
+        message = "orange you glad you picked orange";
+
+    } else if (randomColor === "yellow") {
+        message = "yellow is usually my cup status";
+
+    } else if (randomColor === "green") {
+        message = "green is the color of Po & Tito's cups"
+
+    } else if (randomColor === "blue") {
+        message = "blue is the color of the sky";
+
+    } else if (randomColor === "indigo") {
+        message = "indigo is the I in ROYGBIV";
+
+    } else if (randomColor === "violet") {
+        message = "violet is the color of a beautiful flower";
+        //return "violet is the color of a beautiful flower";
+        //console.log("violet is the color of a beautiful flower");
+
+    } else {
+        message = "SHUT UP";
+    }
+
+    console.log(message);
+}
+
+
+analyzeColor(randomColor);*/
+
+// //if you use return off of every case...
+// console.log(analyzeColor(randomColor));
+
+
+
+
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+
+function analyzeColor(randomColor) {
+    var message;
+
+    switch (randomColor) {
+
+        case "red":
+            message = "Strawberries are red";
+            break;
+
+        case "orange":
+            message = "orange you glad you picked orange";
+            break;
+
+        case "yellow":
+            message = "yellow is usually my cup status";
+            break;
+
+        case "green":
+            message = "green is the color of Po & Tito's cups";
+            break;
+
+        case "blue":
+            message = "blue is the color of the sky";
+            break;
+
+        case "indigo":
+            message = "indigo is the I in ROYGBIV";
+            break;
+
+        case "violet":
+            message = "violet is the color of a beautiful flower";
+            break;
+
+        default:
+            message = "SHUT UP"
+            break;
+    }
+
+    console.log(message);
+}
+
+
+analyzeColor(randomColor);
+
 
 /**
  * TODO:

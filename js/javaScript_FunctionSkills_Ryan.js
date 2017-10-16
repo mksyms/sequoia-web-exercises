@@ -64,13 +64,12 @@ console.log(second("I thought I needed to run and find somebody to love"));*/
 
 //Write a function called `reverse(input)` that takes a string and returns it reversed.
 
-/*
 function reverse(input) {
     var string = "I know I can do all things";
 
 }
 
-console.log(reverse(string));*/
+console.log(reverse(string));
 
 
 //Write a function called `isNumeric(input)` that takes an input and returns a boolean if the input is numeric.
