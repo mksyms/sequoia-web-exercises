@@ -286,9 +286,11 @@ function calculateTotal(luckyNumber, total) {
     newDiscountedPrice = total - (total * discountPercentage);
 
     return newDiscountedPrice;
-
+}
 
     function calculatePercentage(num) {
+        var discountPercentage;
+
         switch (num) {
             case 0:
                 discountPercentage = 0;
@@ -322,7 +324,7 @@ function calculateTotal(luckyNumber, total) {
 
 }
 
-console.log(calculateTotal(4, 100));
+console.log(calculateTotal(luckyNumber, total));
 
 
 
