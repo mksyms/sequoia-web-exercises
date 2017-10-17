@@ -1,20 +1,33 @@
-var userNumberChoice = prompt("Please enter an odd number between 1 and 50.");
+
+
+var userNumberChoice;
 
 do {
-    console.log("User's number choice did not meet parameters");
-    alert("Slow your roll, bro. You need to enter in an ODD number between 1 and 50");
-} while (userNumberChoice % 2 === 0 || NaN || userNumberChoice > 50);
+    userNumberChoice = prompt("Please enter an odd number between 1 and 50.");
 
+        if (userNumberChoice % 2 === 0 || isNaN(userNumberChoice) || userNumberChoice > 50) {
+            alert("Slow your roll, bro. You need to enter in an ODD number between 1 and 50");
+            // console.log("Input of " + userNumberChoice + " did not meet parameters");
+
+        } else {
+            console.log("Number to skip is: " + parseInt(userNumberChoice));
+            break;
+        }
+
+    } while (true);
+
+
+
+/* use SECOND LOOP & CONTINUE STATEMENT to output all the odd numbers between 1 and 50 except for userNumberChoice */
 
 for (var i = 1; i <= 50; i += 1) {
+    if (i % 2 === 0) {
+        continue;
+    }
+    if (parseInt(userNumberChoice) === i) {
+        console.log("Yikes! Skipping number: " + i);
 
-    console.log("Number to skip is: " + parseInt(userNumberChoice));
-
-    if (i === userNumberChoice) {
-        console.log("Yikes! Skipping number: " + parseInt(userNumberChoice));
-    } else if (i % 2 !== 0) {
-        console.log("Here is an odd number: " + parseInt(userNumberChoice));
+    } else {
+        console.log("Here is an odd number: " + i);
     }
 }
-
-
