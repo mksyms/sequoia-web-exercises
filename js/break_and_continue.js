@@ -1,3 +1,4 @@
+/*
 
 
 var userNumberChoice;
@@ -18,7 +19,7 @@ do {
 
 
 
-/* use SECOND LOOP & CONTINUE STATEMENT to output all the odd numbers between 1 and 50 except for userNumberChoice */
+/!* use SECOND LOOP & CONTINUE STATEMENT to output all the odd numbers between 1 and 50 except for userNumberChoice *!/
 
 for (var i = 1; i <= 50; i += 1) {
     if (i % 2 === 0) {
@@ -31,3 +32,4 @@ for (var i = 1; i <= 50; i += 1) {
         console.log("Here is an odd number: " + i);
     }
 }
+*/
