@@ -17,21 +17,30 @@
 
     // TODO: This function needs to be called once every second
     function updateTimer() {
+
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
             document.body.innerHTML = '';
+
         } else if (detonationTimer > 0) {
             document.getElementById('timer').innerHTML = detonationTimer;
         }
 
+
         detonationTimer--;
     }
 
-    // TODO: When this function runs, it needs to
-    // cancel the interval/timeout for updateTimer()
-    function defuseTheBOM() {
+    var defuserID = setInterval(updateTimer, 1000);
 
+    //whatever interval is associated with updateTimer
+
+
+    function defuseTheBOM() {
+        clearInterval(defuserID);
     }
+
+
+
 
     // Don't modify anything below this line!
     //
