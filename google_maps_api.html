@@ -31,53 +31,43 @@
         // Set our map options
         var mapOptions = {
             // Set the zoom level
-            zoom: 21,
+            zoom: 10,
 
-            // This sets the center of the map at our location
+//            // This sets the center of the map at our location
 //            center: {
 //                lat:  37.769656,
 //                lng: -122.4496136
-//            }
-            mapTypeId: google.maps.MapTypeId.HYBRID
+//            },
+           // mapTypeId: google.maps.MapTypeId.HYBRID
         };
 
         var address = "Alcalde J. Elosegi Hiribidea, 273, 20015 Donostia, Gipuzkoa, Spain";
 
-// Init geocoder object
-        var geocoder = new google.maps.Geocoder();
-
         var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
 // Geocode our address
-        geocoder.geocode({ "address": address }, function(results, status) {
+    function getLocation(address) {
+        // Init geocoder object
+        var geocoder = new google.maps.Geocoder();
 
+        geocoder.geocode({"address": address}, function (results, status) { //in this function(results, = gives back LAT & LON as result
             // Check for a successful result
             if (status == google.maps.GeocoderStatus.OK) {
-
+                var position = results[0].geometry.location; //use results and store them in
+                return position;
                 // Recenter the map over the address
-                map.setCenter(results[0].geometry.location);
+                // map.setCenter(results[0].geometry.location); -- HARD CODED LAT & LON
+                addMarkerAndInfoWindow(position, restaurant.name, restaurant.info);
             } else {
-
                 // Show an error message with the status if our request fails
                 alert("Geocoding was not successful - STATUS: " + status);
             }
         });
+    }
+        getLocation(restaurant.address);
 
-        var results =
 
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
-                center: {lat: -33, lng: 151}
-            });
 
-            var image = 'https://i.guim.co.uk/img/static/sys-images/Observer/Pix/pictures/2012/8/9/1344515531302/Elena-and-Juan-Mari-Arzak-008.jpg?w=700&q=20&auto=format&usm=12&fit=max&dpr=2&s=97560ab1cbbcf6621ece606dece11a55';
-            var arzakChefs = new google.maps.Marker({
-                position: {lat: -33.890, lng: 151.274},
-                map: map,
-                icon: image
-            });
-        }
     })();
 </script>
 </body>
