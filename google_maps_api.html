@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        #map-canvas {
+            width: 770px;
+            height: 481px;
+        }
+    </style>
+</head>
+<body>
+
+<!--Generate a map that shows the city with your favorite restaurant using geocoding.-->
+<!--Redraw the map of the above location at zoom levels 5, 15, and 20.-->
+<!--Create a marker on your map of the exact location of your favorite restaurant and adjust the zoom to allow for best viewing distance.-->
+<!--Create an info window with the name of the restaurant.-->
+<!--Zoom in and verify that you have identified the correct location.-->
+
+
+<!-- div to hold map -->
+<div id="map-canvas"></div>
+
+<!-- Load the Google Maps API [DON'T FORGET TO USE A KEY] -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQuHh2IJUCJJu7F8ymdmgDjc5cMfk_fco"></script>
+
+<!-- Script to show address on map -->
+<script type="text/javascript">
+    (function() {
+        "use strict";
+
+        // Set our map options
+        var mapOptions = {
+            // Set the zoom level
+            zoom: 21,
+
+            // This sets the center of the map at our location
+//            center: {
+//                lat:  37.769656,
+//                lng: -122.4496136
+//            }
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+
+        var address = "Alcalde J. Elosegi Hiribidea, 273, 20015 Donostia, Gipuzkoa, Spain";
+
+// Init geocoder object
+        var geocoder = new google.maps.Geocoder();
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+// Geocode our address
+        geocoder.geocode({ "address": address }, function(results, status) {
+
+            // Check for a successful result
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                // Recenter the map over the address
+                map.setCenter(results[0].geometry.location);
+            } else {
+
+                // Show an error message with the status if our request fails
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+        });
+
+        var results =
+
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: {lat: -33, lng: 151}
+            });
+
+            var image = 'https://i.guim.co.uk/img/static/sys-images/Observer/Pix/pictures/2012/8/9/1344515531302/Elena-and-Juan-Mari-Arzak-008.jpg?w=700&q=20&auto=format&usm=12&fit=max&dpr=2&s=97560ab1cbbcf6621ece606dece11a55';
+            var arzakChefs = new google.maps.Marker({
+                position: {lat: -33.890, lng: 151.274},
+                map: map,
+                icon: image
+            });
+        }
+    })();
+</script>
+</body>
