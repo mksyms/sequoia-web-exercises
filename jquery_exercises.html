@@ -38,6 +38,7 @@
 
 <!-- Local Version of 2.2.4 -->
 <script src="./js/jquery-2.2.4.js"></script>
+<!-- <script src="js/jquery-events.js"></script> -->
 
 
 <script>
@@ -46,8 +47,8 @@
         "use strict";
 //        alert("DOM is loaded!");
     });
-
-    
+    </script>
+<script>
 /* 
 ID SELECTORS
 
@@ -61,8 +62,8 @@ ID SELECTORS
 
     
 
-    $("#firstParagraph").css("font-weight", "bold");
-    $("#edu, #vet, #economy, #eduHigher, #justice").css({"font-style" : "italic", "color" : "white", "background-color" : "purple"});
+//    $("#firstParagraph").css("font-weight", "bold");
+//    $("#edu, #vet, #economy, #eduHigher, #justice").css({"font-style" : "italic", "color" : "white", "background-color" : "purple"});
     
     
 /*    
@@ -74,11 +75,11 @@ CLASS SELECTORS
     4) Remove the class from one of the elements. Refresh and test that the border has been removed.
     5) Give another element an id of codeup. Does this element get a border now?*/
 
-        $(".codeup").css({
-            "border-style" : "solid",
-            "border-width" : "1px",
-            "border-color": "red"
-        });
+//        $(".codeup").css({
+//            "border-style" : "solid",
+//            "border-width" : "1px",
+//            "border-color": "red"
+//        });
         //$("#codeup").css({"border-style" : "solid", "border-width" : "1px", "border-color": "red"});
 
 /*
@@ -89,13 +90,41 @@ ELEMENT SELECTORS
     3) Craft selectors that highlight all the h1, p, and li elements.
     4) Create a jQuery statement to alert the contents of your h1 element(s).
 */
-    $()
+
+//    $()
 
 /*
 MULTIPLE SELECTORS
 
     Combine your selectors that highlight all the h1, p, and li elements.
 */
+
+/*
+MOUSE EVENTS
+
+    1) Add jQuery code that will change the background color of a h1 element when clicked
+    2) Make all paragraphs have a font size of 18px when they are double clicked.
+    3) Set all li text color to red when the mouse is hovering, reset to black when it is not.
+
+ */
+
+</script>
+
+
+<script>
+//    $('h1').click(function() {
+//      $(this).css('background-color', '#FF0')
+//      });
+//    $("p").dblclick(function() {
+//        $(this).css('font-size', "18px")
+//    });
+$('li').hover(function() {
+        $(this).css('color', 'red');
+    },
+    function() {
+        $(this).css('color', 'black');
+    }
+);
 
 </script>
 
