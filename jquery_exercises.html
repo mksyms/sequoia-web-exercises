@@ -75,11 +75,11 @@ CLASS SELECTORS
     4) Remove the class from one of the elements. Refresh and test that the border has been removed.
     5) Give another element an id of codeup. Does this element get a border now?*/
 
-//        $(".codeup").css({
-//            "border-style" : "solid",
-//            "border-width" : "1px",
-//            "border-color": "red"
-//        });
+        $(".codeup").css({
+            "border-style" : "solid",
+            "border-width" : "1px",
+            "border-color": "red"
+        });
         //$("#codeup").css({"border-style" : "solid", "border-width" : "1px", "border-color": "red"});
 
 /*
@@ -112,19 +112,23 @@ MOUSE EVENTS
 
 
 <script>
-//    $('h1').click(function() {
-//      $(this).css('background-color', '#FF0')
-//      });
-//    $("p").dblclick(function() {
-//        $(this).css('font-size', "18px")
-//    });
-$('li').hover(function() {
+    //1
+    $('h1').click(function() {
+      $(this).css('background-color', '#FF0')
+      });
+
+    //2
+    $("p").dblclick(function() {
+        $(this).css('font-size', "18px")
+    });
+
+    //3
+    $('li').hover(function() {
         $(this).css('color', 'red');
     },
     function() {
         $(this).css('color', 'black');
-    }
-);
+    });
 
 </script>
 
