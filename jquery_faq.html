@@ -14,8 +14,24 @@
     </style>
 </head>
 <body>
-
+    <h3 id="national-parks-heading">National Parks</h3>
+    <ul id="national-parks">
+        <li>Arches</li>
+        <li>Badlands</li>
+        <li>Carlsbad Caverns</li>
+        <li>Denali</li>
+        <li>Everglades</li>
+    </ul>
+    <h3>State Parks of Texas</h3>
+    <ul id="state-parks-texas">
+        <li>Abilene</li>
+        <li>Big Bend</li>
+        <li>Choke Canyon</li>
+        <li>Davis Mountains</li>
+        <li>Enchanted Rock</li>
+    </ul>
     <dl>
+        <h3>Lorem Content Filler For Previous exercise</h3>
         <dt>Texas Park</dt>
         <dd class="invisible">cool stuff yehaw</dd>
         <dt>Idaho Park</dt>
@@ -44,6 +60,11 @@
     $("dt").click(function(e){
         $(e.target).css("background-color", "yellow");
     });
+    $("dl").this.parent.html("ul");
+
+
+    // Also, $( "html" ).parent() method returns a set containing document
+    // whereas  $( "html" ).parents() returns an empty set.
 
 </script>
 </body>
