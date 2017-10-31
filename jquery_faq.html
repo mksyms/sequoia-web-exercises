@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <dl>
+        <dt>Texas Park</dt>
+        <dd class="invisible">cool stuff yehaw</dd>
+        <dt>Idaho Park</dt>
+        <dd class="invisible">potatoes and stuff</dd>
+        <dt>New York Park</dt>
+        <dd class="invisible">how bout them apples, in the big apple?</dd>
+        <dt>Florida Park</dt>
+        <dd class="invisible">bathsalts and crocodiles</dd>
+        <dt>California Park</dt>
+        <dd class="invisible">hippies and smugness i mean smog</dd>
+        <dt>Indiana Park</dt>
+        <dd class="invisible">Leslie Knope :) :) :) :)</dd>
+    </dl>
+    <h3><a id="endToggle">What's up with those?</a></h3>
+
+    <script src="./js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+//    $("dd").addClass("invisible");
+
+    $("#endToggle").click(function(e) {
+        e.preventDefault();
+        $("dd").toggleClass("invisible");
+    });
+    $("dt").click(function(e){
+        $(e.target).css("background-color", "yellow");
+    });
+
+</script>
+</body>
+</html>
