@@ -214,7 +214,7 @@
         <li>It's home to more than 40 percent of the world's old-growth redwood trees</li>
     </ul>
 
-    <h3>Pinnacles National Park</h3>
+    <h3>Sequoia National Park</h3>
     <ul class="parkFacts">
         <li>
             It is believed that Native Americans inhabited California, and specifically Pinnacles
@@ -311,11 +311,11 @@
 
 
 
-
-            // At the top of the page, add a div with two elements,
-            // an h1 that reads "Would you like to sign up for our newsletter?"
-            // and a SPAN THAT HAS AN "X" in it.
-            // When the 'x' is clicked, hide the entire div element.
+            //----------------------------------------------------------------------//
+            // At the top of the page, add a div with two elements,                 //
+            // an h1 that reads "Would you like to sign up for our newsletter?"     //
+            // and a SPAN THAT HAS AN "X" in it.                                    //
+            // When the 'x' is clicked, hide the entire div element.                //
 
             $("#clickX").click(function(){
                 $(this).parent().hide();
@@ -325,25 +325,48 @@
 
             //----------------------------------------------------------------------//
             // <h3>s =name of park                                                  //
-            // ULs class="parkFacts" that contain
-            // <li>s facts about each park
-            // should start out hidden,
-            // and when the corresponding h3 is clicked,
-            // the ALL DISPLAY of the UL should be toggled with a sliding effect.
+            // ULs class="parkFacts" that contain                                   //
+            // <li>s facts about each park                                          //
+            // should start out hidden,                                             //
+            // and when the corresponding h3 is clicked,                            //
+            // the ALL DISPLAY of the UL should be toggled with a sliding effect.   //
+            //----------------------------------------------------------------------//
+            //when - something happens - add event listener                         //
 
-            //when - something happens - add event listener
 
-            var parkFacts = $(".parkFacts");
-
+/*          var parkFacts = $(".parkFacts");
             parkFacts.hide();
 
-            // console.log(parkFacts.prev().text());
-
-            // these two at the bottom are identical
-            // parkFacts.prev().on('click',function() {});
             parkFacts.prev().click(function() {
+                $(".parkFacts").slideToggle(1000);
+            });
 
-                //   console.log($(this).html());
+
+            OR REVIEW EXAMPLE
+            $("ul").hide();
+            $("h3").click(function() {
+                $(this).next().slideToggle();
+            });
+*/
+
+
+
+
+            var parkFacts = $(".parkFacts");
+            parkFacts.hide();
+
+            //----------------------------------------------------------------------//
+            // console.log(parkFacts.prev().text());                                //
+            //----------------------------------------------------------------------//
+            // parkFacts.prev().click(function() {                                  //
+            // == IS THE SAME AS ==                                                 //
+            // parkFacts.prev().on('click',function() {});                          //
+            parkFacts.prev().click(function() {                                     //
+
+
+            //----------------------------------------------------------------------//
+            // console.log(parkFacts.prev().text()); prints out FIRST element       //
+            //   console.log($(this).html()); prints out ALL                        //
 
                 $(".parkFacts").slideToggle(1000);
             });
@@ -351,12 +374,9 @@
 
 
 
-
-
-
             setTimeout(function(){
                 $("#register").fadeIn();
-        //        console.log("register in");
+                //        console.log("register in");
             }, 8000);
 
 
