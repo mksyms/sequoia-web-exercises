@@ -17,6 +17,7 @@
         .container {
             background-color: lightblue;
             padding: 20px;
+            text-align: center;
         }
         .row {
             background-color: lightgray;
@@ -27,9 +28,10 @@
         .header {
             margin: 0px;
             padding: 0px;
+            text-align: left;
         }
         .city {
-
+            text-align: left;
         }
 
     </style>
@@ -42,33 +44,33 @@
         <br>
         <h4 class="city">City</h4>
 
-        <div class="row">
+        <main class="row">
             <div class="col-xs-4 columnPerDay">
-                Temp#F/C<br>
-                weather.img<br>
-                boldCloudStructure: type<br>
-                boldHumidity: #<br>
-                boldWind: #<br>
-                boldPressure: #<.br>
+                <h6>Temp#F/C</h6>
+                <h6>weather.img</h6>
+                <h6>boldCloudStructure: type</h6>
+                <h6>boldHumidity: #</h6>
+                <h6>boldWind: #</h6>
+                <h6>boldPressure: #</h6>
             </div>
             <div class="col-xs-4 columnPerDay">
-                Temp#F/C<br>
-                weather.img<br>
-                boldCloudStructure: type<br>
-                boldHumidity: #<br>
-                boldWind: #<br>
-                boldPressure: #<.br>
+                <h6>Temp#F/C</h6>
+                <h6>weather.img</h6>
+                <h6>boldCloudStructure: type</h6>
+                <h6>boldHumidity: #</h6>
+                <h6>boldWind: #</h6>
+                <h6>boldPressure: #</h6>
             </div>
             <div class="col-xs-4 columnPerDay">
-                Temp#F/C<br>
-                weather.img<br>
-                boldCloudStructure: type<br>
-                boldHumidity: #<br>
-                boldWind: #<br>
-                boldPressure: #<.br>
+                <h6>Temp#F/C</h6>
+                <h6>weather.img</h6>
+                <h6>boldCloudStructure: type</h6>
+                <h6>boldHumidity: #</h6>
+                <h6>boldWind: #</h6>
+                <h6>boldPressure: #</h6>
             </div>
 
-        </div>
+        </main>
 
 
     </div>
@@ -83,10 +85,45 @@
 
     <script>
         "use strict";
-            $.get("http://api.openweathermap.org/data/2.5/weather", {
+
+            var information = $.get("http://api.openweathermap.org/data/2.5/forecast", {
                 APPID: "218a9f045740a6c3c835a552c3e4b8b6",
                 q:     "San Antonio, TX"
+
+            }).done(function (response) {
+                fillOutNewRows(response);
+//                console.log(response);
+
+            }).fail(function (jqXhr, status, error) {
+                console.log("Response status: " + status);
+                console.log("Error object: " + error);
             });
+
+
+//            var imageURL = "https://openweathermap.org/img/w/"+icon+".png";
+
+            function fillOutNewRows(weatherForDays) {
+
+                var weatherROW = "";
+
+                for(var i = 0; i < weatherForDays.list.length; i += 8){
+//                    console.log(weatherForDays.list[i]);
+
+                    console.log(weatherForDays.list[i].weather[0].main + ": " + weatherForDays.list[i].weather[0].description);
+
+//                      weatherROW +=
+//
+//                    weatherROW += "<div>";
+//                    weatherROW += "<h6>" + weatherForDays.list[i].main.temp_max + "&#92;" + weatherForDays.list[i].main.temp_min + "&deg;" + "</h6>";
+//                    weatherROW += "<img src='imageURL'>" + individualDay.imageURLIndividualDay;
+//                    weatherROW += "<h6>" + weatherForDays.list[i].weather[0].main + ": " + weatherForDays.list[i].weather[0].description + "</h6>";
+                }
+
+                console.log(weatherROW);
+
+            }
+
+
     </script>
 
 </body>
