@@ -1,13 +1,93 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    <title>Weather Map Project</title>
+
+    <!--bootstrap styling-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--custom css styling-->
+    <style>
+        .container {
+            background-color: lightblue;
+            padding: 20px;
+        }
+        .row {
+            background-color: lightgray;
+        }
+        .columnPerDay {
+            border: 1px solid black;
+        }
+        .header {
+            margin: 0px;
+            padding: 0px;
+        }
+        .city {
+
+        }
+
+    </style>
+
 </head>
+
 <body>
+    <div class="container">
+        <h3 class="header">Weather Application</h3>
+        <br>
+        <h4 class="city">City</h4>
+
+        <div class="row">
+            <div class="col-xs-4 columnPerDay">
+                Temp#F/C<br>
+                weather.img<br>
+                boldCloudStructure: type<br>
+                boldHumidity: #<br>
+                boldWind: #<br>
+                boldPressure: #<.br>
+            </div>
+            <div class="col-xs-4 columnPerDay">
+                Temp#F/C<br>
+                weather.img<br>
+                boldCloudStructure: type<br>
+                boldHumidity: #<br>
+                boldWind: #<br>
+                boldPressure: #<.br>
+            </div>
+            <div class="col-xs-4 columnPerDay">
+                Temp#F/C<br>
+                weather.img<br>
+                boldCloudStructure: type<br>
+                boldHumidity: #<br>
+                boldWind: #<br>
+                boldPressure: #<.br>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!--jQuery url-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!--Bootstrap url-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        "use strict";
+            $.get("http://api.openweathermap.org/data/2.5/weather", {
+                APPID: "218a9f045740a6c3c835a552c3e4b8b6",
+                q:     "San Antonio, TX"
+            });
+    </script>
 
 </body>
 </html>
