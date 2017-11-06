@@ -37,6 +37,9 @@
         span {
             font-weight: bold;
         }
+        img {
+            margin: 0px;
+        }
 
     </style>
 
@@ -87,12 +90,7 @@
             </div>
 
         </main>
-        <div id="map-canvas"></div>
-
-        <!--Google Maps API Key-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQuHh2IJUCJJu7F8ymdmgDjc5cMfk_fco"></script>
-
-
+        <div class="center-block" id="map"></div>
 
     </div>
 
@@ -102,54 +100,11 @@
     <!--Bootstrap url-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <!--Google Maps API Key-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQuHh2IJUCJJu7F8ymdmgDjc5cMfk_fco"></script>
+
     <!-- Script to show address on map -->
     <script type="text/javascript">
-        (function() {
-            "use strict";
-
-            // Set our map options
-            var mapOptions = {
-                // Set the zoom level
-                zoom: 10,
-
-//            // This sets the center of the map at our location
-//            center: {
-//                lat:  37.769656,
-//                lng: -122.4496136
-//            },
-                 mapTypeId: google.maps.MapTypeId.HYBRID
-            };
-
-            var address = "Alcalde J. Elosegi Hiribidea, 273, 20015 Donostia, Gipuzkoa, Spain";
-
-            var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-// Geocode our address
-            function getLocation(address) {
-                // Init geocoder object
-                var geocoder = new google.maps.Geocoder();
-
-                geocoder.geocode({"address": address}, function (results, status) { //in this function(results, = gives back LAT & LON as result
-                    // Check for a successful result
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        var position = results[0].geometry.location; //use results and store them in
-                        return position;
-                        // Recenter the map over the address
-                        // map.setCenter(results[0].geometry.location); -- HARD CODED LAT & LON
-                        addMarkerAndInfoWindow(position, restaurant.name, restaurant.info);
-                    } else {
-                        // Show an error message with the status if our request fails
-                        alert("Geocoding was not successful - STATUS: " + status);
-                    }
-                });
-            }
-            getLocation(restaurant.address);
-
-
-
-        })();
-
-
 
         var information = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
             APPID: "a8df453d0094a6356c71e33efe98f000",
@@ -176,7 +131,7 @@
 
 
                 weatherROW += "<div>";
-                weatherROW += "<h4><span>" + weatherForDays.list[i].temp.max + "/" + weatherForDays.list[i].temp.min + "&deg;" + "</span></h4>";
+                weatherROW += "<h4><span>" + weatherForDays.list[i].temp.max.toFixed(0) + "/" + weatherForDays.list[i].temp.min.toFixed(0) + "&deg;" + "</span></h4>";
                 weatherROW += "<img src='https://openweathermap.org/img/w/"+weatherForDays.list[i].weather[0].icon+".png'>";
                 weatherROW += "<h6>" + "<span>" + weatherForDays.list[i].weather[0].main + ": </span>" + weatherForDays.list[i].weather[0].description + "</h6>";
                 weatherROW += "<h6>" + "<span>Humidity: </span>" + weatherForDays.list[i].humidity + "</h6>";
@@ -190,6 +145,17 @@
             $(".city").text(weatherForDays.city.name);
 
         }
+
+        var mapOptions = {
+            zoom: 10,
+            center: {
+                lat:  29.426791,
+                lng: -98.489602
+            }
+        };
+        // Render the map
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        console.log(map);
 
 
     </script>
