@@ -22,7 +22,7 @@
         .row {
             background-color: lightgray;
         }
-        .columnPerDay {
+        .col-xs-4 {
             border: 1px solid black;
         }
         .header {
@@ -32,6 +32,10 @@
         }
         .city {
             text-align: left;
+        }
+
+        span {
+            font-weight: bold;
         }
 
     </style>
@@ -45,7 +49,7 @@
         <h4 class="city">City</h4>
 
         <main class="row">
-            <div class="col-xs-4 columnPerDay">
+            <div class="col-xs-4 firstDay">
                 <h6>Temp#F/C</h6>
                 <h6>weather.img</h6>
                 <h6>boldCloudStructure: type</h6>
@@ -53,7 +57,7 @@
                 <h6>boldWind: #</h6>
                 <h6>boldPressure: #</h6>
             </div>
-            <div class="col-xs-4 columnPerDay">
+            <div class="col-xs-4 secondDay">
                 <h6>Temp#F/C</h6>
                 <h6>weather.img</h6>
                 <h6>boldCloudStructure: type</h6>
@@ -61,7 +65,7 @@
                 <h6>boldWind: #</h6>
                 <h6>boldPressure: #</h6>
             </div>
-            <div class="col-xs-4 columnPerDay">
+            <div class="col-xs-4 thirdDay">
                 <h6>Temp#F/C</h6>
                 <h6>weather.img</h6>
                 <h6>boldCloudStructure: type</h6>
@@ -75,8 +79,6 @@
 
     </div>
 
-
-
     <!--jQuery url-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -84,44 +86,50 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script>
+
         "use strict";
 
-            var information = $.get("http://api.openweathermap.org/data/2.5/forecast", {
-                APPID: "218a9f045740a6c3c835a552c3e4b8b6",
-                q:     "San Antonio, TX"
 
-            }).done(function (response) {
-                fillOutNewRows(response);
+
+        var information = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+            APPID: "a8df453d0094a6356c71e33efe98f000",
+            q:     "San Antonio, TX",
+            units: "imperial",
+            cnt: 3
+
+        }).done(function (response) {
+            fillOutNewRows(response);
 //                console.log(response);
 
-            }).fail(function (jqXhr, status, error) {
-                console.log("Response status: " + status);
-                console.log("Error object: " + error);
-            });
+        }).fail(function (jqXhr, status, error) {
+            console.log("Response status: " + status);
+            console.log("Error object: " + error);
+        });
 
 
-//            var imageURL = "https://openweathermap.org/img/w/"+icon+".png";
+        function fillOutNewRows(weatherForDays) {
 
-            function fillOutNewRows(weatherForDays) {
+            var weatherROW = "";
 
-                var weatherROW = "";
+            for(var i = 0; i < weatherForDays.list.length; i += 8) {
+                console.log(weatherForDays);
 
-                for(var i = 0; i < weatherForDays.list.length; i += 8){
-//                    console.log(weatherForDays.list[i]);
 
-                    console.log(weatherForDays.list[i].weather[0].main + ": " + weatherForDays.list[i].weather[0].description);
-
-//                      weatherROW +=
-//
-//                    weatherROW += "<div>";
-//                    weatherROW += "<h6>" + weatherForDays.list[i].main.temp_max + "&#92;" + weatherForDays.list[i].main.temp_min + "&deg;" + "</h6>";
-//                    weatherROW += "<img src='imageURL'>" + individualDay.imageURLIndividualDay;
-//                    weatherROW += "<h6>" + weatherForDays.list[i].weather[0].main + ": " + weatherForDays.list[i].weather[0].description + "</h6>";
-                }
-
-                console.log(weatherROW);
+                weatherROW += "<div>";
+                weatherROW += "<h4><span>" + weatherForDays.list[i].temp.max + "/" + weatherForDays.list[i].temp.min + "&deg;" + "</span></h4>";
+                weatherROW += "<img src='https://openweathermap.org/img/w/"+weatherForDays.list[i].weather[0].icon+".png'>";
+                weatherROW += "<h6>" + "<span>" + weatherForDays.list[i].weather[0].main + ": </span>" + weatherForDays.list[i].weather[0].description + "</h6>";
+                weatherROW += "<h6>" + "<span>Humidity: </span>" + weatherForDays.list[i].humidity + "</h6>";
+                weatherROW += "<h6>" + "<span>Wind: </span>" + weatherForDays.list[i].speed + "</h6>";
+                weatherROW += "<h6>" + "<span>Pressure: </span>" + weatherForDays.list[i].pressure + "</h6>";
+                weatherROW += "</div>";
 
             }
+
+            $(".firstDay, .secondDay, .thirdDay").html(weatherROW);
+            $(".city").text(weatherForDays.city.name);
+
+        }
 
 
     </script>
