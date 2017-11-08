@@ -100,7 +100,7 @@
                         <h4>feel free to checkout the weather somewhere else in the world</h4>
                     </div>
                     <div class="col-xs-8 inputLabel">City:
-                        <input type="text" class="form-control" placeholder="Address" name="cityInput" id="cityInput">
+                        <input type="text" class="form-control" placeholder="San Antonio, Texas" name="cityInput" id="cityInput">
                     </div>
                     <div class="col-xs-8 inputLabel">Latitude,Longitude:
                         <input type="text" class="form-control" placeholder="29.4717877,-98.4867275" name="latitude" id="latlng">
@@ -173,7 +173,6 @@
 //        };
 
         function initMap(){
-            console.log('map init');
             var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
             var geocoder = new google.maps.Geocoder();
