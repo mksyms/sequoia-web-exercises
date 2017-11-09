@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+//    Write a function named wait that accepts a number as a parameter
+//    and returns a promise that resolves after the passed number of milliseconds.
+//
+//    wait(1000).then(() => console.log('You\'ll see this after 1 second'));
+//    wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+
+//    function makeRequest() {
+//        return new Promise((resolve, reject) => {
+//            setTimeout(() => {
+//                if (Math.random() > 0.1) {
+//                    resolve('Here is your data: ...');
+//                } else {
+//                    reject('Network Connection Error!');
+//                }
+//            }, 1500);
+//        });
+//    }
+//
+//    const request = makeRequest();
+//    console.log(request); // pending promise
+//    request.then(data => console.log('Promise resolved!', data));
+//    // if resolved, will log "Promise resolved!" and "Here is your data: ..."
+//    request.catch(error => console.log('Promise rejected!', error));
+//    // if rejected, will log "Promise rejected!" and "Network Connection Error!"
+
+
+
+    const wait = (milliseconds) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve();
+            }, milliseconds);
+        });
+    };
+//    console.log(wait(1000));
+
+    wait(1000).then(() => console.log('You\'ll see this after 1 second'));
+
+
+
+
+
+
+</script>
+</body>
+</html>
