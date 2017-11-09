@@ -51,12 +51,12 @@ const users = [
 
 
 /*vanilla JS*/
-/*var arr = [];
-
-users.forEach(function(user) {
-    arr.push(user.email);
-});
-console.log(arr);*/
+// var arr = [];
+//
+// users.forEach(function(user) {
+//     arr.push(user.email);
+// });
+// console.log(arr);
 
 const userEmail = users.map(user => user.email);
 console.log(userEmail);
@@ -104,14 +104,23 @@ console.log(arr);
 
 //.reduce-------------------------------------------------------------------------------
 
+const usersObject = users.reduce((object, user) => {
+    object[user.id] = user;
+    return object;
+    }, {});
+    console.log(usersObject);
 
 
+/*
+object = {};
+object = user.id;
+*/
 
+//take array of objects and taking changing shape of data
 
-
-
-
-
+// when you are presented with something that you would probably use
+//single variable - one data type - reduce
+//if you need a list just as long - map
 
 
 
